@@ -1,40 +1,59 @@
-var game = new Phaser.Game(640, 480, Phaser.AUTO, '', {preload: preload, create: create, update: update});
+var game = new Phaser.Game(640, 480, Phaser.AUTO, '', { preload: preload, create: create, update: update });
 
-var speed = 200;
-var scoreText = "Score: ";
-var score = 0;
+//player
 var player;
 
+//maps
+var map;
+var layer;
+
+//input
+var cursors;
+var jump;
+var wasd;
+
 function preload(){
-	game.stage.backgroundColor = '#cbcbff';
-  game.load.image('penguin', 'AeroPenguin.png');
-    
-  this.cursors = game.input.keyboard.createCursorKeys();
+	this.load.image('set', 'set.png');
+	this.load.image('player', 'Player.png');
+	this.load.tilemap('map_basic', 'Map_Basic.json', null, Phaser.Tilemap.TILED_JSON);
 }
-
+ 
 function create(){
-	player = game.add.sprite(0, game.width / 2 - 8, 'penguin');
-  game.physics.enable(player, Phaser.Physics.ARCADE);
+	game.physics.startSystem(Phaser.Physics.ARCADE);
+	game.stage.backgroundColor = '#380000';
 
-  game.add.text(10, 10, scoreText + score, { font: '24px Arial', fill: '#fff' });
+    map = this.add.tilemap('map_basic');
+    map.addTilesetImage('set');
+    map.setCollisionBetween(0, 100);
+
+    layer = map.createLayer('Walls');
+    layer.resizeWorld();
+
+    //uncomment for debug mode
+    //layer.debug = true;
+
+    player = this.add.sprite(200, 200, 'player');
+    game.physics.arcade.enable(player); 
+	player.body.gravity.y = 500;
+
+    cursors = game.input.keyboard.createCursorKeys();
+    jump = game.input.keyboard.addKey(Phaser.Keyboard.SPACEBAR);
+
+    
 }
+ 
+function update(game){
+	game.physics.arcade.collide(player, layer);
 
-function update(){
-    player.body.velocity.y = 0;
     player.body.velocity.x = 0;
 
-    if(this.cursors.up.isDown) {
-      player.body.velocity.y -= speed;
-    }
-    else if(this.cursors.down.isDown) {
-      player.body.velocity.y += speed;
+    if (cursors.left.isDown){
+        player.body.velocity.x = -150;
+    }else if (cursors.right.isDown){
+        player.body.velocity.x = 150;
     }
 
-    if(player.y == game.world.height){
-      player.y = 0;
+    if (jump.isDown && player.body.onFloor()){
+        player.body.velocity.y = -250;
     }
 }
-
-
-
-
