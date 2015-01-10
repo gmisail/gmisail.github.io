@@ -21,6 +21,7 @@ function preload(){
 function create(){
 	game.physics.startSystem(Phaser.Physics.ARCADE);
 	game.stage.backgroundColor = '#380000';
+    game.scale.fullScreenScaleMode = Phaser.ScaleManager.EXACT_FIT;
 
     map = this.add.tilemap('map_basic');
     map.addTilesetImage('set');
