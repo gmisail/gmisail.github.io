@@ -10,12 +10,11 @@ var layer;
 //input
 var cursors;
 var jump;
-var wasd;
 
 function preload(){
 	this.load.image('set', 'set.png');
-	this.load.image('player', 'Player.png');
-	this.load.tilemap('map_basic', 'Map_Basic.json', null, Phaser.Tilemap.TILED_JSON);
+	this.load.image('player', 'sprites/Player.png');
+	this.load.tilemap('map_basic', 'maps/Map_Basic.json', null, Phaser.Tilemap.TILED_JSON);
 }
  
 function create(){
@@ -38,9 +37,7 @@ function create(){
 	player.body.gravity.y = 500;
 
     cursors = game.input.keyboard.createCursorKeys();
-    jump = game.input.keyboard.addKey(Phaser.Keyboard.SPACEBAR);
-
-    
+    jump = game.input.keyboard.addKey(Phaser.Keyboard.SPACEBAR);  
 }
  
 function update(game){
@@ -48,6 +45,10 @@ function update(game){
 
     player.body.velocity.x = 0;
 
+    getPlayerInput(player);
+}
+
+function getPlayerInput(player){
     if (cursors.left.isDown){
         player.body.velocity.x = -150;
     }else if (cursors.right.isDown){
