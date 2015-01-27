@@ -12,39 +12,52 @@ var cursors;
 var jump;
 
 function preload(){
+
+    //loads all of the game assets
 	this.load.image('set', 'set.png');
 	this.load.image('player', 'sprites/Player.png');
 	this.load.tilemap('map_basic', 'maps/Map_Basic.json', null, Phaser.Tilemap.TILED_JSON);
 }
  
 function create(){
-	game.physics.startSystem(Phaser.Physics.ARCADE);
-	game.stage.backgroundColor = '#380000';
-    game.scale.fullScreenScaleMode = Phaser.ScaleManager.EXACT_FIT;
 
+    //starts the phaser ARCADE physics
+	game.physics.startSystem(Phaser.Physics.ARCADE);
+
+    //sets the background color to the hex color #380000
+	game.stage.backgroundColor = '#380000';
+
+    //loads the tilemap, and sets the collision
     map = this.add.tilemap('map_basic');
     map.addTilesetImage('set');
     map.setCollisionBetween(0, 100);
 
+    //adds the map layer
     layer = map.createLayer('Walls');
     layer.resizeWorld();
 
-    //uncomment for debug mode
+    //uncomment to show the collision boundries
     //layer.debug = true;
 
+    //creates the player
     player = this.add.sprite(200, 200, 'player');
     game.physics.arcade.enable(player); 
 	player.body.gravity.y = 500;
 
+    //initializes the cursor keys(arrows) and the space bar
     cursors = game.input.keyboard.createCursorKeys();
     jump = game.input.keyboard.addKey(Phaser.Keyboard.SPACEBAR);  
 }
  
 function update(game){
+    //player and map collisions
 	game.physics.arcade.collide(player, layer);
 
+    //player velocity is reset to 0 every frame, so that it will not go
+    //infinitly in one direction.
     player.body.velocity.x = 0;
 
+    //gets player input, and holds the player controls
     getPlayerInput(player);
 }
 
