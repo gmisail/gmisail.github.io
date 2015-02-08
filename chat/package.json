@@ -1,9 +1,0 @@
-{
-  "name": "sure",
-  "version": "0.0.1",
-  "description": "not the best chat client",
-  "dependencies": {
-    "express": "^4.10.2",
-    "socket.io": "^1.3.3"
-  }
-}
