@@ -1,0 +1,4 @@
+User-agent: *
+Disallow: 
+
+Sitemap: http://gmisail64.github.io/sitemap.xml 
