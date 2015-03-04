@@ -72,6 +72,8 @@ function getPlayerInput(player){
         player.body.velocity.x = speed;
     }else if(cursors.up.isDown){
     	player.body.gravity.y = -500;
+    }else if(cursors.down.isDown){
+    	player.body.gravity.y = 500;
     }
 
     if (jump.isDown && player.body.onFloor()){
