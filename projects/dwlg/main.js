@@ -2,7 +2,7 @@ var game = new Phaser.Game(640, 480, Phaser.AUTO, '', { preload: preload, create
 
 //player
 var player;
-var speed = 200;
+var speed = 150;
 
 //physics
 var gravity = 500;
