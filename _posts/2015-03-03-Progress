@@ -1,0 +1,13 @@
+---
+published: false
+---
+
+## News, I guess?
+
+Hello. Today I was doing some experimentation with LibGDX, especially with my WIP game engine Atomic. I was experimenting with tile maps and collisions, which are really the worst. Well, collision anyway. I am making a mini-project, sort of a RPG, just to build on Atomic and get some juicy experience.
+
+## Atomic?
+Atomic is my personal WIP game engine. It is based on LibGDX and Java, and supports desktop, ios, android, and HTML. I would distribute it, but I need to get the project structure sorted out first. 
+
+## Ewww, Java
+Deal with it, Java is good.
