@@ -14,6 +14,7 @@ var layer;
 //input
 var cursors;
 var jump;
+var shift;
 
 function preload(){
 
@@ -50,7 +51,8 @@ function create(){
 
     //initializes the cursor keys(arrows) and the space bar
     cursors = game.input.keyboard.createCursorKeys();
-    jump = game.input.keyboard.addKey(Phaser.Keyboard.SPACEBAR);  
+    jump = game.input.keyboard.addKey(Phaser.Keyboard.SPACEBAR);
+  	shift = game.input.keyboard.addKey(Phaser.Keyboard.SHIFT);
 }
  
 function update(game){
@@ -75,7 +77,11 @@ function getPlayerInput(player){
     }else if(cursors.down.isDown){
     	player.body.gravity.y = gravity;
     }
-
+  
+  	if(shift.isDown){
+  		speed = 1000;
+    }
+  
     if (jump.isDown && player.body.onFloor()){
         player.body.velocity.y = -500;
     }
