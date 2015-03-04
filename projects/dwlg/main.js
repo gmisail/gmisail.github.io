@@ -2,7 +2,7 @@ var game = new Phaser.Game(640, 480, Phaser.AUTO, '', { preload: preload, create
 
 //player
 var player;
-var speed = 250;
+var speed = 200;
 
 //physics
 var gravity = 500;
@@ -85,6 +85,6 @@ function getPlayerInput(player){
     }
   
     if (jump.isDown && player.body.onFloor()){
-        player.body.velocity.y = -250;
+        player.body.velocity.y = -300;
     }
 }
