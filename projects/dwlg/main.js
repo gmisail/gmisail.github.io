@@ -5,7 +5,7 @@ var player;
 var speed = 250;
 
 //physics
-var gravity;
+var gravity = 500;
 
 //maps
 var map;
@@ -71,9 +71,9 @@ function getPlayerInput(player){
     }else if (cursors.right.isDown){
         player.body.velocity.x = speed;
     }else if(cursors.up.isDown){
-    	player.body.gravity.y = -500;
+    	player.body.gravity.y = -gravity;
     }else if(cursors.down.isDown){
-    	player.body.gravity.y = 500;
+    	player.body.gravity.y = gravity;
     }
 
     if (jump.isDown && player.body.onFloor()){
