@@ -80,6 +80,8 @@ function getPlayerInput(player){
   
   	if(shift.isDown){
   		speed = 1000;
+    }else{
+    	speed = 500;
     }
   
     if (jump.isDown && player.body.onFloor()){
