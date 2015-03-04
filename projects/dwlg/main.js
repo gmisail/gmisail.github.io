@@ -2,6 +2,7 @@ var game = new Phaser.Game(640, 480, Phaser.AUTO, '', { preload: preload, create
 
 //player
 var player;
+var speed = 250;
 
 //maps
 var map;
@@ -63,9 +64,9 @@ function update(game){
 
 function getPlayerInput(player){
     if (cursors.left.isDown){
-        player.body.velocity.x = -150;
+        player.body.velocity.x = -speed;
     }else if (cursors.right.isDown){
-        player.body.velocity.x = 150;
+        player.body.velocity.x = speed;
     }
 
     if (jump.isDown && player.body.onFloor()){
