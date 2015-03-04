@@ -85,6 +85,6 @@ function getPlayerInput(player){
     }
   
     if (jump.isDown && player.body.onFloor()){
-        player.body.velocity.y = -150;
+        player.body.velocity.y = -250;
     }
 }
