@@ -2,16 +2,24 @@
 layout: default
 ---
 
-<article>
-   <h2>{{ page.title }}</h2>
-   {{ content }}
+<article class="post">
+  <h1 class="post-title">{{ page.title }}</h1>
+  <time datetime="{{ page.date | date_to_xmlschema }}" class="page-date">{{ page.date | date_to_string }}</time>
+  {{ content }}
 </article>
 
-<footer>
-   <div id="date" class="meta">
-      {{ page.date | date_to_string }}
-   </div>
-   <div id="return">
-      <a href="/">&laquo; Return to the home page</a>
-   </div>
-</footer>
+<aside class="related">
+  <h2>Related Posts</h2>
+  <ul class="related-posts">
+    {% for post in site.related_posts limit:3 %}
+      <li>
+        <h3>
+          <a href="{{ site.baseurl }}{{ post.url }}">
+            {{ post.title }}
+            <small><time datetime="{{ post.date | date_to_xmlschema }}">{{ post.date | date_to_string }}</time></small>
+          </a>
+        </h3>
+      </li>
+    {% endfor %}
+  </ul>
+</aside>

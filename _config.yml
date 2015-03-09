@@ -1,6 +1,19 @@
-name: "gmisail"
-markdown: redcarpet
-highlighter: pygments
-permalink: :title
-exclude: [README.md, LICENSE, Makefile]
+# Permalinks
+permalink:        pretty
+relative_permalinks: true
 
+# Setup
+title:            gmisail
+tagline:          Why are you cheering.
+url:              http://www.gmisail64.github.io
+paginate:         1
+baseurl:          /
+author:
+  name:           Graham Misail
+  url:            
+  email:          gmisail64@gmail.com
+
+# Custom vars
+version:          1.0.0
+github:
+  repo:           
