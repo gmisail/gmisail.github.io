@@ -1,19 +1,34 @@
-# Permalinks
-permalink:        pretty
-relative_permalinks: true
+title: "blog title"
+author: "Blog Author"
+description: "Really cool blog about ... something"
+#subheading: "Really cool blog about ... something"
+more: "read more"
+url: "http://niklabs.me"
+baseurl: "/contrast" # comment out if in root directory
 
-# Setup
-title:            gmisail
-tagline:          Why are you cheering.
-url:              http://www.gmisail64.github.io
-paginate:         1
-baseurl:          /
-author:
-  name:           Graham Misail
-  url:            
-  email:          gmisail64@gmail.com
+comments:
+    disqus: "niklasbuschmann"
+#    isso: "comments.mysite.org"
 
-# Custom vars
-version:          1.0.0
-github:
-  repo:           
+style:
+#    body: "whitesmoke"
+    padding: 33%
+    anchor: "#46f"
+    serif-heading: true
+    nav: "#181818"
+#    headline: "#06f"
+    description: "white"
+    article:
+        odd: "#ffffff"
+        even: "#222222"
+
+links:
+  - github: "https://github.com/me/"
+  - twitter: "https://twitter.com/me/"
+  - google-plus: "https://plus.google.com/+me"
+  - reddit: "https://www.reddit.com/user/me/"
+  - youtube: "https://www.youtube.com/user/me"
+  - steam: "http://steamcommunity.com/id/me/"
+
+excerpt_separator: "\n\n\n"
+defaults: [{scope: {path: ""}, values: {layout: "default"}}, {scope: {path: "", type: "posts"}, values: {comments: true}}]

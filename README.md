@@ -1,120 +1,77 @@
-# Poole
+Contrast
+========
 
-*The Strange Case of Dr. Jekyll and Mr. Hyde* tells the story of a lawyer investigating the connection of two persons, Dr. Henry Jekyll and Mr. Edward Hyde. Chief among the novel's supporting cast is a man by the name of Mr. Poole, Dr. Jekyll's loyal butler.
+[Demo](http://niklasbuschmann.github.io/contrast)
 
------
-
-Poole is the butler for [Jekyll](http://jekyllrb.com), the static site generator. It's designed and developed by [@mdo](https://twitter.com/mdo) to provide a clear and concise foundational setup for any Jekyll site. It does so by furnishing a full vanilla Jekyll install with example templates, pages, posts, and styles.
-
-![Poole](https://f.cloud.github.com/assets/98681/1834359/71ae4048-73db-11e3-9a3c-df38eb170537.png)
-
-See Poole in action with [the demo site](http://demo.getpoole.com).
-
-There are currently two official themes built on Poole:
-
-* [Hyde](http://hyde.getpoole.com)
-* [Lanyon](http://lanyon.getpoole.com)
-
-Individual theme feedback and bug reports should be submitted to the theme's individual repository.
+![screenshot](https://cloud.githubusercontent.com/assets/4943215/5601369/f7d36d6c-92fa-11e4-85e3-752c270a91d3.png)
 
 
-## Contents
+## Features
 
-- [Usage](#usage)
-- [Options](#options)
-  - [Rems, `font-size`, and scaling](#rems-font-size-and-scaling)
-- [Development](#development)
-- [Author](#author)
-- [License](#license)
+ - mobile first
+ - syntax highlighting
+ - [disqus](https://disqus.com/) / [isso](http://posativ.org/isso/) integration
+ - customizable
+ - valid HTML5
 
+Please note: Create a *master*-branch if you want to use this theme with *.github.io.
 
-## Usage
+## Getting Started
 
-### 1. Install Jekyll
+If you're completely new to Jekyll, I recommend checking out the documentation at <http://jekyllrb.com> or there's a tutorial by [Smashing Magazine](http://www.smashingmagazine.com/2014/08/01/build-blog-jekyll-github-pages/).
 
-Poole is built for use with Jekyll, so naturally you'll need to install that. On Macs, it's rather straightforward:
+### Installing Jekyll
 
-```bash
+If you don't have Jekyll already installed, you will need to go ahead and do that.
+
+```
 $ gem install jekyll
 ```
 
-**Windows users:** Windows users have a bit more work to do, but luckily [@juthilo](https://github.com/juthilo) has your back with his [Run Jekyll on Windows](https://github.com/juthilo/run-jekyll-on-windows) guide.
+#### Verify your Jekyll version
 
-You may also need to install Pygments, the Python syntax highlighter for code snippets that plays nicely with Jekyll. Read more about this [in the Jekyll docs](http://jekyllrb.com/docs/templates/#code_snippet_highlighting).
-
-### 2a. Quick start
-
-To help anyone with any level of familiarity with Jekyll quickly get started, Poole includes everything you need for a basic Jekyll site. To that end, just download Poole and start up Jekyll.
-
-### 2b. Roll your own Jekyll site
-
-Folks wishing to use Jekyll's templates and styles can do so with a little bit of manual labor. Download Poole and then copy what you need (likely `_layouts/`, `*.html` files, `atom.xml` for RSS, and `public/` for CSS, JS, etc.).
-
-### 3. Running locally
-
-To see your Jekyll site with Poole applied, start a Jekyll server. In Terminal, from `/Poole` (or whatever your Jekyll site's root directory is named):
-
-```bash
-$ jekyll serve
-```
-
-Open <http://localhost:4000> in your browser, and voilà.
-
-### 4. Serving it up
-
-If you host your code on GitHub, you can use [GitHub Pages](https://pages.github.com) to host your project.
-
-1. Fork this repo and switch to the `gh-pages` branch.
-  1. If you're [using a custom domain name](https://help.github.com/articles/setting-up-a-custom-domain-with-github-pages), modify the `CNAME` file to point to your new domain.
-  2. If you're not using a custom domain name, **modify the `baseurl` in `_config.yml`** to point to your GitHub Pages URL. Example: for a repo at `github.com/username/poole`, use `http://username.github.io/poole/`. **Be sure to include the trailing slash.**
-3. Done! Head to your GitHub Pages URL or custom domain.
-
-No matter your production or hosting setup, be sure to verify the `baseurl` option file and `CNAME` settings. Not applying this correctly can mean broken styles on your site.
-
-## Options
-
-Poole includes some customizable options, typically applied via classes on the `<body>` element.
-
-
-### Rems, `font-size`, and scaling
-
-Poole is built almost entirely with `rem`s (instead of pixels). `rem`s are like `em`s, but instead of building on the immediate parent's `font-size`, they build on the root element, `<html>`.
-
-By default, we use the following:
-
-```css
-html {
-  font-size: 16px;
-  line-height: 1.5;
-}
-@media (min-width: 38em) {
-  html {
-    font-size: 20px;
-  }
-}
+It's important to also check your version of Jekyll since this project uses Native Sass which
+is [only supported by 2.0+](http://jekyllrb.com/news/2014/05/06/jekyll-turns-2-0-0/).
 
 ```
+$ jekyll -v
+# This should be jekyll 2.0.0 or later
+```
 
-To easily scale your site's typography and components, simply customize the base `font-size`s here.
+### Fork, then clone
 
+Fork the repo, and then clone it so you've got the code locally.
 
-## Development
+### Modify the _config.yml
 
-Poole has two branches, but only one is used for active development.
+The `_config.yml` located in the root of the Pixyll directory contains all of the configuration details
+for the Jekyll site.
 
-- `master` for development.  **All pull requests should be to submitted against `master`.**
-- `gh-pages` for our hosted site, which includes our analytics tracking code. **Please avoid using this branch.**
+### Jekyll Serve
 
+Then, start the Jekyll Server. I always like to give the `--watch` option so it updates the generated HTML when I make changes.
 
-## Author
+```
+$ jekyll serve --watch
+```
 
-**Mark Otto**
-- <https://github.com/mdo>
-- <https://twitter.com/mdo>
+Now you can navigate to `localhost:4000` in your browser to see the site.
 
+### Using Github Pages
+
+You can host your Jekyll site for free with Github Pages. [Click here](https://pages.github.com/) for more information.
 
 ## License
 
-Open sourced under the [MIT license](LICENSE.md).
+Released under *public domain*.
 
-<3
+## Thanks to the following:
+
+* [Jekyll](http://jekyllrb.com)
+* [Github Pages](https://pages.github.com/)
+* [Richard Leland: pygment](https://github.com/richleland/pygments-css)
+* [mrdoob: three.js](https://github.com/mrdoob/three.js/)
+* [Font Awesome](http://fortawesome.github.io/Font-Awesome/)
+* [Paul D. Hunt: Source Sans Pro](https://plus.google.com/108888178732927400671/about)
+* [Victor Gaultney: Gentium Basic](https://profiles.google.com/victorgaultneytype/about)
+* [John Otander: Pixyll](https://github.com/johnotander/pixyll/)
