@@ -1,31 +1,43 @@
 <?xml version="1.0" encoding="utf-8"?>
 <feed xmlns="http://www.w3.org/2005/Atom">
 
- <title>Poole</title>
- <link href="http://getpoole.com/atom.xml" rel="self"/>
- <link href="http://getpoole.com/"/>
- <updated>2015-03-02T21:50:42-05:00</updated>
- <id>http://getpoole.com</id>
+ <title>gmisail</title>
+ <link href="http://www.gmisail64.github.io/atom.xml" rel="self"/>
+ <link href="http://www.gmisail64.github.io/"/>
+ <updated>2015-03-26T19:54:33-04:00</updated>
+ <id>http://www.gmisail64.github.io</id>
  <author>
-   <name>Mark Otto</name>
-   <email>markdotto@gmail.com</email>
+   <name>Graham Misail</name>
+   <email>gmisail64@gmail.com</email>
  </author>
 
  
  <entry>
+   <title>Update</title>
+   <link href="http://www.gmisail64.github.io//2015/03/26/post/"/>
+   <updated>2015-03-26T00:00:00-04:00</updated>
+   <id>http://www.gmisail64.github.io/2015/03/26/post</id>
+   <content type="html">&lt;p&gt;Just messing with code formatting.
+Take a look at this Java (Using my custom engine).&lt;/p&gt;
+
+&lt;hr /&gt;
+</content>
+ </entry>
+ 
+ <entry>
    <title>Hello.</title>
-   <link href="http://getpoole.com//2015/03/02/hello/"/>
+   <link href="http://www.gmisail64.github.io//2015/03/02/hello/"/>
    <updated>2015-03-02T00:00:00-05:00</updated>
-   <id>http://getpoole.com/2015/03/02/hello</id>
-   <content type="html">&lt;p&gt;Ok, first of all, you’re probably like &lt;em&gt;AHHH WHERE ARE THE GAMES!?!?!&lt;/em&gt; Don’t worry, they’re here. To go to Dinosaurs with Laser Guns, use this url: &lt;code&gt;www.gmisail64.github.io/projects/dwlg&lt;/code&gt; and for Starro, use this &lt;code&gt;www.gmisail64.github.io/projects/Starro&lt;/code&gt;.&lt;/p&gt;
+   <id>http://www.gmisail64.github.io/2015/03/02/hello</id>
+   <content type="html">&lt;p&gt;Ok, first of all, you’re probably like &lt;em&gt;AHHH WHERE ARE THE GAMES!?!?!&lt;/em&gt; Don’t worry, they’re here. You can find them all here:&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;Dinosaurs with Laser Guns: &lt;a href=&quot;http://gmisail64.github.io/projects/dwlg&quot;&gt;Play&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;Starro: &lt;a href=&quot;http://gmisail64.github.io/projects/Starro&quot;&gt;Play&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
 
 &lt;hr /&gt;
 
-&lt;h3 id=&quot;what-happened&quot;&gt;What Happened?&lt;/h3&gt;
-
-&lt;p&gt;I have entered the 21st century. My old website layout was in HTML/CSS with Twitter Bootstrap. I mean that is fine and all but… ew… HTML. What is a great work around? Enter Jekyll. Jekyll is a relatively new platform that uses a markdown language and generates HTML. Pretty neat, eh?&lt;/p&gt;
-
-&lt;p&gt;I honestly have better things to do, than to use HTML. Jekyll has got me covered. Plus it works with Github Pages, which is what I use. :)&lt;/p&gt;
 </content>
  </entry>
  
