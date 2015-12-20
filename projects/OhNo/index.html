@@ -1,0 +1,23 @@
+<html>
+	<body>
+		<script>
+			var audio = new Audio("oh no.wav" ) ;
+
+			audio.play();
+
+			audio.oncanplaythrough = function(){
+				audio.play();
+			}
+
+			audio.loop = true;
+
+			audio.onended = function(){
+				audio.play();
+			}
+
+		</script>
+
+
+		<img src="https://media.giphy.com/media/3rgXBIrhWMlIkbfUwE/giphy.gif" width="auto" height="auto" min-width="100%" min-height="100%"/>
+	</body>
+</html>
