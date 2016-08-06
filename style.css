@@ -1,0 +1,67 @@
+#bg{
+    background-color: #FFFFFF;
+}
+
+#bounds{
+    margin-left: 25%;
+    margin-right: 25%;
+    margin-top: 1%;
+    margin-bottom: 1%;
+    font-family: 'Open Sans', sans-serif;
+
+}
+
+#title{
+    position: relative;
+    top: 50%;
+    transform: translateY(-50%);
+    text-align: center;
+    color: #C21B1F;
+    font-size: 5vh;
+    font-family: 'Lato', cursive;
+}
+
+
+
+#item{
+    padding: 2%;
+    background-color: #e5e5e5;
+}
+
+#project-title{
+    font-weight: 700;
+    font-size: 4vh;
+}
+
+#project-desc{
+    font-weight: 400;
+    font-size: 3vh;
+}
+
+
+
+#spacer{
+    font-size: 0;
+    height: 10px;
+    line-height: 0;
+}
+
+
+
+#bar{
+    height: 10%;
+    width: 100%;
+    margin-left: 0px;
+    margin-right: 0px;
+    padding 5%;
+    background-color: black;
+}
+
+body{
+    margin: 0px;
+}
+
+ul {
+    align-content: center;
+    list-style: none;
+}
