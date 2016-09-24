@@ -1,0 +1,60 @@
+<html>
+	<head>
+		<title>Easy GooGle</title>
+		<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+
+		<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap-theme.min.css" integrity="sha384-rHyoN1iRsVXV4nD0JutlnGaslCJuC7uwjduW9SVrLvRYooPp2bWYgmgJQIXwl/Sp" crossorigin="anonymous">
+
+		<script src="main.js"></script>
+	</head>
+
+	<body>
+		<div class="container">
+			<h1>Egg</h1>
+
+			<hr>
+
+			<form>
+                
+                <label for="cans">Select which search operators to use. If you do not check it off, it will not be applied.</label>
+                
+                <div class="cans">
+                    <input id="canExclude" type="checkbox" class="form-check-input"> Exclude Terms
+                    <br>
+                    <input id="canDomain" type="checkbox" class="form-check-input"> Search Domain
+                    <br>
+                    <input id="canDefinition" type="checkbox" class="form-check-input"> Find Definition of Search
+                    <br>
+                    <input id="canGlossary" type="checkbox" class="form-check-input"> Find Glossary Of Search
+                </div>
+                
+                
+                <hr>
+                
+				<label for="search">Search</label>
+    			<input type="text" class="form-control" id="search" placeholder="Search...">
+				
+                <hr>
+                
+				<label for="exclude">Exclude</label>
+    			<input type="text" class="form-control" id="exclude" placeholder="Exclude from search...">
+				<br>
+				<label for="domain">Domain</label>
+    			<input type="text" class="form-control" id="domain" placeholder="Search domain...">
+                
+                <hr>
+                
+                <label for="domain">Definition</label>
+    			<input type="text" class="form-control" id="definition" placeholder="Search definition...">
+                
+                <hr>
+  				
+                <input onclick="searchWithSettings()" type="button" class="btn btn-primary" value="Search">
+                
+                <input onclick="buildAndPrint()" type="button" class="btn btn-primary" value="Get Search URL">
+			</form>
+            
+            <p id="output"></p>
+		</div>
+	</body>
+</html>
