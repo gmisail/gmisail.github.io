@@ -1,3 +1,8 @@
+@font-face {
+  font-family: "GrahamScript";
+  src: url(downloads/GrahamScript.tff) format("truetype");
+}
+
 #bg{
     background-color: #FFFFFF;
 }
@@ -18,7 +23,7 @@
     text-align: center;
     color: #C21B1F;
     font-size: 5vh;
-    font-family: 'Lato', cursive;
+    font-family: 'GrahamScript', cursive;
 }
 
 
