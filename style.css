@@ -12,7 +12,7 @@
     margin-right: 15%;
     margin-top: 1%;
     margin-bottom: 1%;
-    font-family: 'Open Sans', sans-serif;
+    font-family: 'Puritan', sans-serif;
 
 }
 
@@ -21,9 +21,9 @@
     top: 50%;
     transform: translateY(-50%);
     text-align: center;
-    color: #C21B1F;
+    color: #000000;
     font-size: 5vh;
-    font-family: 'GrahamScript', cursive;
+    font-family: 'Puritan', sans-serif;
 }
 
 
@@ -58,7 +58,7 @@
     margin-left: 0px;
     margin-right: 0px;
     padding 5%;
-    background-color: black;
+    background-color: white;
 }
 
 body{

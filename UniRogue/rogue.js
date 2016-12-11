@@ -11,8 +11,11 @@ var GOBLIN = 3;
 var COIN = 4;
 var DOOR = 5;
 var CHEST = 6;
+var SWORD = 7;
 
 map = generate();
+
+var weapons = [];
 
 var player = {
     x: 2,
@@ -62,7 +65,7 @@ var notification = {
 }
 
 function render() {
-    console_send_message_focus("Power ~> " + player.power + " || Coins ~> " + player.money);
+    console_send_message_focus("Power ~> " + player.power + " - Coins ~> " + player.money);
     for (var y = 0; y < map.length; y++) {
 
         console_print_newline();
@@ -83,6 +86,8 @@ function render() {
                     console_print_char_green("/");
                 } else if (map[y][x] == CHEST) {
                     console_print_char_green("C");
+                } else if (map[y][x] == SWORD) {
+                    console_print_char_blue("S");
                 } else {
                     console_print_space();
                 }
@@ -110,9 +115,10 @@ refresh();
 function console(){
     command_prompt.onsubmit = function(e){
         var message = command_prompt_input.value;
+        var args = message.split(" ");
         e.preventDefault();
 
-        switch(message){
+        switch(args[0]){
             case "open":
                 if(map[player.y - 1][player.x] == DOOR){
                         map[player.y - 1][player.x] = 0;
@@ -173,28 +179,73 @@ function console(){
                 if(map[player.y - 1][player.x] == COIN){
                     map[player.y - 1][player.x] = 0;
                     money.give(1);
+                    notification.clear();
+                    notification.set("You found one coin.");
                 }
 
                 if(map[player.y + 1][player.x] == COIN){
                     map[player.y + 1][player.x] = 0;
                     money.give(1);
+                    notification.clear();
+                    notification.set("You found one coin.");
                 }
 
                 if(map[player.y][player.x + 1] == COIN){
                     map[player.y][player.x + 1] = 0;
                     money.give(1);
+                    notification.clear();
+                    notification.set("You found one coin.");
                 }
 
                 if(map[player.y][player.x - 1] == COIN){
                     map[player.y][player.x - 1] = 0;
                     money.give(1);
+                    notification.clear();
+                    notification.set("You found one coin.");
+                    //player.money += 1;
+                }
+
+                if(map[player.y - 1][player.x] == SWORD){
+                    map[player.y - 1][player.x] = 0;
+                    weapons.push("sword");
+                    notification.clear();
+                    notification.set("You found a sword.");
+                }
+
+                if(map[player.y + 1][player.x] == SWORD){
+                    map[player.y + 1][player.x] = 0;
+                    weapons.push("sword");
+                    notification.clear();
+                    notification.set("You found a sword.");
+                }
+
+                if(map[player.y][player.x + 1] == SWORD){
+                    map[player.y][player.x + 1] = 0;
+                    weapons.push("sword");
+                    notification.clear();
+                    notification.set("You found a sword.");
+                }
+
+                if(map[player.y][player.x - 1] == SWORD){
+                    map[player.y][player.x - 1] = 0;
+                    weapons.push("sword");
+                    notification.clear();
+                    notification.set("You found a sword.");
                     //player.money += 1;
                 }
 
 
                 refresh();
 
+            case "equip":
+                for(var i = 0; i < weapons.length; i++){
+                    if(args[1] == weapons[i]){
+                        notification.clear();
+                        notification.set("Equipping " + args[1]);
+                    }
+                }
 
+                refresh();
         }
 
         command_prompt_input.value = "";
