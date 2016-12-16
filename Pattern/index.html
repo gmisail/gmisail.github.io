@@ -16,16 +16,18 @@ var canvas = context.getContext('2d');
 canvas.fillStyle = "blue";
 canvas.fillRect(0, 0, context.width, context.height);
 
-var colors = ["black", "white"];
+var colors = ["black", "black"];
+
+var clear = false;
 
 var x = 0;
-var y = Math.round(context.height * Math.random());
+var y = Math.floor(context.height * Math.random());
 var xdir = 8;
 var ydir = 8;
 
-var xb = Math.round(context.width * Math.random());
-var yb = 0;
-var xdirb = 8;
+var xb = window.innerWidth;
+var yb = y;
+var xdirb = -8;
 var ydirb = 8;
 
 var id = 0;
@@ -54,6 +56,11 @@ function update(){
     }
 
 
+    if(clear){
+        canvas.clearRect(0, 0, window.innerWidth, window.innerHeight);
+        canvas.fillStyle = "blue";
+        canvas.fillRect(0, 0, context.width, context.height);
+    }
 
     canvas.fillStyle = colors[0];
     canvas.fillRect(x, y, 8, 8)

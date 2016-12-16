@@ -1,0 +1,20 @@
+<html>
+    <head>
+        <link rel="stylesheet" href="style.css">
+    </head>
+
+    <body>
+        <div id="bar">
+            <input type="file" id="loader" multiple accept="txt/*" style="display:none" onchange="on_load(this.files)">
+            <label class="tool" for="loader">Load</label>
+            <button class="tool" onclick="on_export()">Save As</button>
+            <button class="tool" onclick="on_download()">Save</button>
+        </div>
+
+        <textarea id="text" name="text" rows="8" cols="80"></textarea>
+
+        <script src="main.js">
+
+        </script>
+    </body>
+</html>
