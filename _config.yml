@@ -1,0 +1,17 @@
+title: gmisail
+email: gmisail64@gmail.com
+description: >- # this means to ignore newlines until "baseurl:"
+  Game programmer and developer. I love technology and anything that emits blue light. Code is a sport.
+baseurl: "" # the subpath of your site, e.g. /blog
+url: "http://gmisail64.github.io"
+twitter_username: gmdevacc
+github_username:  gmisail64
+
+# Build settings
+markdown: kramdown
+theme: minima
+plugins:
+  - jekyll-feed
+
+#jeykll settings
+keep_files: ["apps"]
