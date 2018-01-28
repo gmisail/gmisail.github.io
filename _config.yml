@@ -14,4 +14,5 @@ plugins:
   - jekyll-feed
 
 #jeykll settings
+exclude: ["vanilla"]
 keep_files: ["apps"]
