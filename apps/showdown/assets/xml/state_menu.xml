@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<data>	
+	<definition name="arcade" font="PressStart2P" size="8"/>
+
+	<sprite src="RAW:assets/images/background" center_x="false" center_y="false"></sprite>
+
+	<text use_def="arcade" align="center" center_x="true" x="0" y="25" text="Level Selection"/>
+		
+	<button name="basic_arena" center_x="true" width="128" x="0" y="50" id="start" label="Basic Arena">		
+		<param type="string" value="basic_arena"/>
+
+		<text use_def="arcade" color="0x000000" size="8"></text>
+	</button>
+
+    <button name="basic_arena" center_x="true" width="128" x="0" y="75" id="start" label="TBA...">		
+		<param type="string" value="tba"/>
+
+		<text use_def="arcade" color="0x000000" size="8"></text>
+	</button>
+</data>

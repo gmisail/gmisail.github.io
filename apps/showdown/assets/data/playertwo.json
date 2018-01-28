@@ -1,0 +1,18 @@
+{
+    "name": "Player Two",
+    "weapon": "sword",
+    "texture": "assets/images/playertwo.png",
+    "color": "BLUE",
+    "health": 100,
+    "speed": 150,
+    "gravity": 800,
+    "drag": 1000,
+    "controls": {
+        "UP": "I",
+        "DOWN": "K",
+        "LEFT": "J",
+        "RIGHT": "L",
+        "ATTACK_LEFT": "O",
+        "ATTACK_RIGHT": "U"
+    }
+}
