@@ -19,7 +19,12 @@ Because OpenFL's HTML5 output is not the best, there will be a few issues. For i
 - [ ] Multiplayer
 - [ ] LAN Multiplayer
 - [ ] Release on Itch.io
+- [X] Release on Gamejolt
+- [X] Compile for HTML5
+- [X] Compile for Mac
+- [ ] Compile for Windows
+- [ ] Compile for Linux
 
 I plan completing at least the first 3 for the initial beta release. Scripting will allow the user to create mods and edit the player. Multiplayer will be the trickiest task, and probably the last to be completed.
 
-[Play it here](/apps/showdown/index.html)
+[Play it here on Gamejolt.](https://gamejolt.com/games/showdown/315347)
