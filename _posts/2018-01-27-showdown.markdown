@@ -11,10 +11,12 @@ It is written in Haxe using Haxeflixel. Levels use CSV files which are drawn usi
 
 Because OpenFL's HTML5 output is not the best, there will be a few issues. For instance, the fonts are fuzzy and audio does not work. These issues are fixed on the desktop (Mac, Windows, Linux) version.
 
+**I will porting Showdown to Godot 3. Haxeflixel was working well, however Godot has a better audio system, input system, and a better level editor. Before I re-release a build, I will add all of the current features first.**
+
 **Milestones:**
 - [X] 1v1 PVP
 - [X] Weapons
-- [ ] More Levels
+- [X] More Levels
 - [ ] Scripting (hscript? custom scripting lang?)
 - [ ] Multiplayer
 - [ ] LAN Multiplayer
@@ -24,6 +26,8 @@ Because OpenFL's HTML5 output is not the best, there will be a few issues. For i
 - [X] Compile for Mac
 - [ ] Compile for Windows
 - [ ] Compile for Linux
+- [ ] Better visuals / graphics
+- [ ] HTML5 audio
 
 I plan completing at least the first 3 for the initial beta release. Scripting will allow the user to create mods and edit the player. Multiplayer will be the trickiest task, and probably the last to be completed.
 
