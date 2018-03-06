@@ -1,13 +1,19 @@
 #title {
-    font-weight: bold;
+    font-family: 'Open Sans', sans-serif;
+    font-weight: 700;
+}
+
+#site-title {
+    font-family: 'Source Code Pro', monospace;
+    color: black;
 }
 
 body {
-    font-family: 'Open Sans', sans-serif;
+    font-family: 'Gentium Book Basic', serif;
 }
 
-h1 {
-    font-family: 'Fugaz One', cursive;
+h5 {
+    font-weight: bold;
 }
 
 code {
@@ -19,6 +25,66 @@ a {
     text-decoration: none;
 }
 
-a:hover {
+.color:hover {
     color: black;
+}
+
+.cursor {
+    font-weight: 100;
+    color: black;
+    -webkit-animation: 1s blink step-end infinite;
+    -moz-animation: 1s blink step-end infinite;
+    -ms-animation: 1s blink step-end infinite;
+    -o-animation: 1s blink step-end infinite;
+    animation: 1s blink step-end infinite;
+}
+
+@keyframes "blink" {
+    from,
+    to {
+        back: transparent;
+    }
+    50% {
+        color: white;
+    }
+}
+
+@-moz-keyframes blink {
+    from,
+    to {
+        color: transparent;
+    }
+    50% {
+        color: white;
+    }
+}
+
+@-webkit-keyframes "blink" {
+    from,
+    to {
+        color: transparent;
+    }
+    50% {
+        color: white;
+    }
+}
+
+@-ms-keyframes "blink" {
+    from,
+    to {
+        color: transparent;
+    }
+    50% {
+        color: white;
+    }
+}
+
+@-o-keyframes "blink" {
+    from,
+    to {
+        color: transparent;
+    }
+    50% {
+        color: white;
+    }
 }
