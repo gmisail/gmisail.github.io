@@ -42,7 +42,7 @@ a {
 @keyframes "blink" {
     from,
     to {
-        back: transparent;
+        back: black;
     }
     50% {
         color: white;
@@ -52,7 +52,7 @@ a {
 @-moz-keyframes blink {
     from,
     to {
-        color: transparent;
+        color: black;
     }
     50% {
         color: white;
@@ -62,7 +62,7 @@ a {
 @-webkit-keyframes "blink" {
     from,
     to {
-        color: transparent;
+        color: black;
     }
     50% {
         color: white;
@@ -72,7 +72,7 @@ a {
 @-ms-keyframes "blink" {
     from,
     to {
-        color: transparent;
+        color: black;
     }
     50% {
         color: white;
@@ -82,7 +82,7 @@ a {
 @-o-keyframes "blink" {
     from,
     to {
-        color: transparent;
+        color: black;
     }
     50% {
         color: white;
