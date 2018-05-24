@@ -17,60 +17,50 @@
 
         <div class="row">
             <div class="col-md-8">
-                <h4 class="color" id="title">EnglishScript, MIT Blueprint 18'</h4>
+                <h4 class="color" id="title">Implementing Screen Shake using Trig</h4>
                 <p>
 
+Screen shake is a popular effect used in video games where the visible contents on the 
+screen will shake. To implement this effect, all you need is some basic trigonometry. 
+
+<h5>Implementation</h5>
+
+We want our screen to shake in all directions: up, down, left, and right. To achieve this,
+we will use the <i>sin</i> trig ratio. If you are unfamiliar, <i>sin</i> will return a 
+value within -1 and 1 based on the angle given (For a more detailed explanation, I'd recommend
+researching the basic trig ratios: sin, cos, and tan.)
+
 <p>
-    The learning curve of programming is very difficult for many individuals. At this year's MIT Blueprint, 
-    our group created a solution to this issue. The solution was <strong>EnglishScript</strong>. EnglishScript
-    is an interpreted programming language which replicates the English language. The goal of this language
-    was to abstract logic from syntax, allowing the user to learn how programming languages flow as opposed to a specific
-    syntax.
+My implementation of screen shake will be in Haxe, but the logic will stay the same for most languages as long as they have a random number function and trig functions. By the way, <i>camera</i> represents a generic camera object with a position.
 </p>
 
 <pre>
     <code>
-variable x equals 99 #you can define comments with number symbols
-x equals 4
-
-variable y equals 10
-y equals 10 plus 4
-x equals 4 times 4
-
-call print The variable x is equal to @x
-call print By the way, y is equal to @y
+public function shake(a : Float) {
+    camera.x = a * Math.sin((2 * Math.PI) * Math.random());
+    camera.y = a * Math.sin((2 * Math.PI) * Math.random());
+}
     </code>
 </pre>
 
+If you have learned about trig ratios, you should know that 'a,' or the amplitude, is the max
+displacement in either direction. The amplitude will be the max number of pixels the camera will move in
+any direction.
+
 <p>
-    This code will output to:
-
-    <pre>
-        <code>
-The variable x is equal to 16
-By the way, y is equal to 14
-        </code>
-    </pre>
-
-    The goal of the language was to allow novice programmers to learn programming <strong>logic</strong> instead of
-    a specific syntax. With this knowledge, the difficulty of learning other languages would be greatly minimized.
+Since <i>Math.random()</i> returns a value from 0 to 1, we can find a random angle by multiplying our random number by
+the period of <i>sin.</i> For example, if <i>Math.random</i> generates 0.25 and we multiply it by <i>2 * Math.PI</i>,
+we will get the angle <i>Math.PI / 2</i> radians, or 90 degrees. <i>Math.sin(Math.PI / 2)</i> equals 1. If we multiply this
+by our amplitude, we will get how far we will displace the camera. If the amplitude is 10, then we will be moving the camera
+10 pixels in either the x or y directions. If the angle is greater than <i>Math.PI</i> then the camera will move in the negative
+direction. 
 </p>
 
-<h5>Implementation</h5>
 <p>
-    EnglishScript was implemented in Javascript. The language itself, although running on the client side, is not dependent
-    on the client or server side. The library requires a string that the interpreter will run. As long as you have a
-    string, EnglishScript does not care where it is run.
-</p>
-<p>
-    The interpreter takes a string and splits it by line breaks, or '\n' characters. For every line, the interpreter
-    will split the line by spaces, or the " " character. It first looks for keywords such as "variable," "equals," and "call." 
-    When it finds one of these phrases, it knows that it must be in a particular format. For instance, if it sees "equals", that
-    must mean that the term before it will be set to the term after it. It looks the preceding term, sees if it is a variable, and sets
-    it to the term after it. 
+To create the desired effect, call the <i>shake</i> function every frame you want the screen to shake.	
 </p>
 
-</p>
+For more information on trig functions, read <a href="https://www.mathsisfun.com/algebra/trigonometry.html">this page about basic trig.</a></p>
             </div>
 
             <div class="col-md-4">
