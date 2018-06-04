@@ -1,0 +1,100 @@
+<html>
+
+<head>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    
+	<link href="https://fonts.googleapis.com/css?family=EB+Garamond:400" rel="stylesheet">    
+	<link href="https://fonts.googleapis.com/css?family=Open+Sans:700" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Gentium+Book+Basic" rel="stylesheet">
+
+    <link href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+    <link rel="stylesheet" href="/assets/style.css">
+</head>
+
+<body>
+    <div class="container">
+		<div>
+        	<h1 id="site-title" class="text-center">
+				<a href="/">An Incomplete Modern Education</a>
+			</h1>
+			
+			<h4 id="site-title" class="text-center">
+				Computer Science in Education 
+			</h4>
+		</div>
+
+        <div class="row">
+            <div class="col-md-8">
+                <h4 class="color" id="title">Implementing Screen Shake using Trig</h4>
+                <p>
+
+Screen shake is a popular effect used in video games where the visible contents on the 
+screen will shake. To implement this effect, all you need is some basic trigonometry. 
+
+<h5>Implementation</h5>
+
+We want our screen to shake in all directions: up, down, left, and right. To achieve this,
+we will use the <i>sin</i> trig ratio. If you are unfamiliar, <i>sin</i> will return a 
+value within -1 and 1 based on the angle given (For a more detailed explanation, I'd recommend
+researching the basic trig ratios: sin, cos, and tan.)
+
+<p>
+My implementation of screen shake will be in Haxe, but the logic will stay the same for most languages as long as they have a random number function and trig functions. By the way, <i>camera</i> represents a generic camera object with a position.
+</p>
+
+<pre>
+    <code>
+public function shake(a : Float) {
+    camera.x = a * Math.sin((2 * Math.PI) * Math.random());
+    camera.y = a * Math.sin((2 * Math.PI) * Math.random());
+}
+    </code>
+</pre>
+
+If you have learned about trig ratios, you should know that 'a,' or the amplitude, is the max
+displacement in either direction. The amplitude will be the max number of pixels the camera will move in
+any direction.
+
+<p>
+Since <i>Math.random()</i> returns a value from 0 to 1, we can find a random angle by multiplying our random number by
+the period of <i>sin.</i> For example, if <i>Math.random</i> generates 0.25 and we multiply it by <i>2 * Math.PI</i>,
+we will get the angle <i>Math.PI / 2</i> radians, or 90 degrees. <i>Math.sin(Math.PI / 2)</i> equals 1. If we multiply this
+by our amplitude, we will get how far we will displace the camera. If the amplitude is 10, then we will be moving the camera
+10 pixels in either the x or y directions. If the angle is greater than <i>Math.PI</i> then the camera will move in the negative
+direction. 
+</p>
+
+<p>
+To create the desired effect, call the <i>shake</i> function every frame you want the screen to shake.	
+</p>
+
+For more information on trig functions, read <a href="https://www.mathsisfun.com/algebra/trigonometry.html">this page about basic trig.</a></p>
+            </div>
+
+            <div class="col-md-4">
+                <h4 id="title">Pages</h4>
+                <ul>
+                    
+                    <li><a href="/pages/about.html">About</a></li>
+                    
+                    <li><a href="/pages/critics.html">Critics</a></li>
+                    
+                    <li><a href="/pages/impact.html">Impact</a></li>
+                    
+                    <li><a href="/pages/interview.html">Interview</a></li>
+                    
+                    <li><a href="/pages/nowwhat.html">So now what?</a></li>
+                    
+                    <li><a href="/pages/statistics.html">Statistics</a></li>
+                    
+                    <li><a href="/pages/whathasbeendone.html">What has been done?</a></li>
+                    
+                    <li><a href="/pages/why.html">Why?</a></li>
+                    
+                </ul>
+            </div>
+        </div>
+    </div>
+</body>
+
+</html>
