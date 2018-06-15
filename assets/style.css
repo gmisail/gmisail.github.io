@@ -1,27 +1,42 @@
 #title {
-    font-family: 'Open Sans', sans-serif;
+    font-family: 'Source Code Pro', sans-serif;
     font-weight: 700;
+    color: white;
 }
 
 #site-title {
     font-family: 'Source Code Pro', monospace;
-    color: black;
+    font-weight: 700;
+    color: white;
+}
+
+#date {
+    color: #4E4E50;
+    font-style: italic;
 }
 
 body {
-    font-family: 'Gentium Book Basic', serif;
+    font-family: 'Rubik', serif;
+    background-color: #1A1A1D;
+    color: white;
 }
 
 h5 {
     font-weight: bold;
 }
 
-code {
-    font-family: 'Courier New', Courier, monospace;
+pre {
+    padding: 1%;
+    border-left: 6px solid #C3073F;
+    background-color: #6F2232;
+
+    font-family: 'Source Code Pro', Courier, monospace;
+    font-weight: 400;
+    color: white;
 }
 
 a {
-    color: red;
+    color: #C3073F;
     text-decoration: none;
 }
 
@@ -42,7 +57,7 @@ a {
 @keyframes "blink" {
     from,
     to {
-        back: black;
+        back: #1A1A1D;
     }
     50% {
         color: white;
@@ -52,7 +67,7 @@ a {
 @-moz-keyframes blink {
     from,
     to {
-        color: black;
+        color: #1A1A1D;
     }
     50% {
         color: white;
@@ -62,7 +77,7 @@ a {
 @-webkit-keyframes "blink" {
     from,
     to {
-        color: black;
+        color: #1A1A1D;
     }
     50% {
         color: white;
@@ -72,7 +87,7 @@ a {
 @-ms-keyframes "blink" {
     from,
     to {
-        color: black;
+        color: #1A1A1D;
     }
     50% {
         color: white;
@@ -82,7 +97,7 @@ a {
 @-o-keyframes "blink" {
     from,
     to {
-        color: black;
+        color: #1A1A1D;
     }
     50% {
         color: white;
