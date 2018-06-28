@@ -1,0 +1,204 @@
+<html>
+
+<head>
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<link href="https://fonts.googleapis.com/css?family=Bungee|Ubuntu+Mono" rel="stylesheet">
+	<link rel="stylesheet" href="assets/style.css">
+</head>
+
+<body>
+
+	<h1>Ultimate Tic-Tac-Toe</h1>
+	<h3 class="turn">
+		Turn: <span class="player"></span>
+	</h3>
+
+	<h3 class="win">
+
+	</h3>
+
+	<table class="global">
+		<tr>
+			<td class="parentCell topleft">
+				<table class="parent topleft">
+					<tr>
+						<td class="content topleft">_</td>
+						<td class="content topmiddle">_</td>
+						<td class="content topright">_</td>
+					</tr>
+					<tr>
+						<td class="content middleleft">_</td>
+						<td class="content">_</td>
+						<td class="content middleright">_</td>
+					</tr>
+					<tr>
+						<td class="content bottomleft">_</td>
+						<td class="content bottommiddle">_</td>
+						<td class="content bottomright">_</td>
+					</tr>
+				</table>
+			</td>
+			<td class="parentCell topmiddle">
+				<table class="parent">
+					<tr>
+						<td class="content topleft">_</td>
+						<td class="content topmiddle">_</td>
+						<td class="content topright">_</td>
+					</tr>
+					<tr>
+						<td class="content middleleft">_</td>
+						<td class="content">_</td>
+						<td class="content middleright">_</td>
+					</tr>
+					<tr>
+						<td class="content bottomleft">_</td>
+						<td class="content bottommiddle">_</td>
+						<td class="content bottomright">_</td>
+					</tr>
+				</table>
+			</td>
+			<td class="parentCell topright">
+				<table class="parent">
+					<tr>
+						<td class="content topleft">_</td>
+						<td class="content topmiddle">_</td>
+						<td class="content topright">_</td>
+					</tr>
+					<tr>
+						<td class="content middleleft">_</td>
+						<td class="content">_</td>
+						<td class="content middleright">_</td>
+					</tr>
+					<tr>
+						<td class="content bottomleft">_</td>
+						<td class="content bottommiddle">_</td>
+						<td class="content bottomright">_</td>
+					</tr>
+				</table>
+			</td>
+		</tr>
+		<tr>
+			<td class="parentCell middleleft">
+				<table class="parent">
+					<tr>
+						<td class="content topleft">_</td>
+						<td class="content topmiddle">_</td>
+						<td class="content topright">_</td>
+					</tr>
+					<tr>
+						<td class="content middleleft">_</td>
+						<td class="content">_</td>
+						<td class="content middleright">_</td>
+					</tr>
+					<tr>
+						<td class="content bottomleft">_</td>
+						<td class="content bottommiddle">_</td>
+						<td class="content bottomright">_</td>
+					</tr>
+				</table>
+			</td>
+			<td class="parentCell">
+				<table class="parent">
+					<tr>
+						<td class="content topleft">_</td>
+						<td class="content topmiddle">_</td>
+						<td class="content topright">_</td>
+					</tr>
+					<tr>
+						<td class="content middleleft">_</td>
+						<td class="content">_</td>
+						<td class="content middleright">_</td>
+					</tr>
+					<tr>
+						<td class="content bottomleft">_</td>
+						<td class="content bottommiddle">_</td>
+						<td class="content bottomright">_</td>
+					</tr>
+				</table>
+			</td>
+			<td class="parentCell middleright">
+				<table class="parent">
+					<tr>
+						<td class="content topleft">_</td>
+						<td class="content topmiddle">_</td>
+						<td class="content topright">_</td>
+					</tr>
+					<tr>
+						<td class="content middleleft">_</td>
+						<td class="content">_</td>
+						<td class="content middleright">_</td>
+					</tr>
+					<tr>
+						<td class="content bottomleft">_</td>
+						<td class="content bottommiddle">_</td>
+						<td class="content bottomright">_</td>
+					</tr>
+				</table>
+			</td>
+		</tr>
+		<tr>
+			<td class="parentCell bottomleft">
+				<table class="parent">
+					<tr>
+						<td class="content topleft">_</td>
+						<td class="content topmiddle">_</td>
+						<td class="content topright">_</td>
+					</tr>
+					<tr>
+						<td class="content middleleft">_</td>
+						<td class="content">_</td>
+						<td class="content middleright">_</td>
+					</tr>
+					<tr>
+						<td class="content bottomleft">_</td>
+						<td class="content bottommiddle">_</td>
+						<td class="content bottomright">_</td>
+					</tr>
+				</table>
+			</td>
+			<td class="parentCell bottommiddle">
+				<table class="parent">
+					<tr>
+						<td class="content topleft">_</td>
+						<td class="content topmiddle">_</td>
+						<td class="content topright">_</td>
+					</tr>
+					<tr>
+						<td class="content middleleft">_</td>
+						<td class="content">_</td>
+						<td class="content middleright">_</td>
+					</tr>
+					<tr>
+						<td class="content bottomleft">_</td>
+						<td class="content bottommiddle">_</td>
+						<td class="content bottomright">_</td>
+					</tr>
+				</table>
+			</td>
+			<td class="parentCell bottomright">
+				<table class="parent">
+					<tr>
+						<td class="content topleft">_</td>
+						<td class="content topmiddle">_</td>
+						<td class="content topright">_</td>
+					</tr>
+					<tr>
+						<td class="content middleleft">_</td>
+						<td class="content">_</td>
+						<td class="content middleright">_</td>
+					</tr>
+					<tr>
+						<td class="content bottomleft">_</td>
+						<td class="content bottommiddle">_</td>
+						<td class="content bottomright">_</td>
+					</tr>
+				</table>
+			</td>
+		</tr>
+	</table>
+
+	<script src="assets/jquery.js"></script>
+	<script src="main.js"></script>
+</body>
+
+</html>
