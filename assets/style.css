@@ -1,13 +1,11 @@
 #title {
-    font-family: 'Source Code Pro', sans-serif;
-    font-weight: 700;
-    color: white;
+    font-family: 'Fjalla One', sans-serif;
+    color: black;
 }
 
 #site-title {
-    font-family: 'Source Code Pro', monospace;
-    font-weight: 700;
-    color: white;
+    font-family: 'Fjalla One', monospace;
+    color: black;
 }
 
 #date {
@@ -16,9 +14,9 @@
 }
 
 body {
-    font-family: 'Rubik', serif;
-    background-color: #1A1A1D;
-    color: white;
+    font-family: 'Nunito', serif;
+    background-color: white;
+    color: black;
 }
 
 h5 {
@@ -26,17 +24,16 @@ h5 {
 }
 
 pre {
-    padding: 1%;
-    border-left: 6px solid #C3073F;
-    background-color: #6F2232;
-
-    font-family: 'Source Code Pro', Courier, monospace;
-    font-weight: 400;
-    color: white;
+    background-color: lightgrey;
+	
+	padding: 8px;
+	
+    font-family: 'Fjalla One', Courier, monospace;
+    color: black;
 }
 
 a {
-    color: #C3073F;
+    color: grey;
     text-decoration: none;
 }
 
