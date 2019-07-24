@@ -31,56 +31,39 @@
 				</div>
 			
 				<div class="col-md-6">
-					<h4 class="color" id="title">Implementing Screen Shake using Trig</h4>
-					<p>06 &#x2F; 01 &#x2F; 2018</p>
+					<h4 class="color" id="title">A Couple Updates</h4>
+					<p>07 &#x2F; 24 &#x2F; 2019</p>
 					<p>
 
-Screen shake is a popular effect used in video games where the visible contents on the 
-screen will shake. To implement this effect, all you need is some basic trigonometry. 
+<p>
+So, as of right now, two months has gone by since summer vacation finally began. Even though it hasn't been too
+exciting in particular, I've killed some major bugs and learned a lot.
+</p>
 
-<h5>Implementation</h5>
+<h4>Nice</h4>
 
 <p>
-We want our screen to shake in all directions: up, down, left, and right. To achieve this,
-we will use the <i>sin</i> trig ratio. If you are unfamiliar, <i>sin</i> will return a 
-value within -1 and 1 based on the angle given (For a more detailed explanation, I'd recommend
-researching the basic trig ratios: sin, cos, and tan.)
+First of all, I've made some big changes in my Nice project, a static site generator. Although the core generator remained untouched (I do not think I have had to wait more than a second for my websites to generate, and at this point I am scared to change anything) 
+I have made the overall workflow way easier. I updated the documentation on the GitHub README, and added a couple commands (create-post, create-page, create-layout) that create basic data-types and fill in the essentials. 
 </p>
 
 <p>
-My implementation of screen shake will be in Haxe, but the logic will stay the same for most languages as long as they have a random number function and trig functions. By the way, <i>camera</i> represents a generic camera object with a position.
-</p>
-
-<pre>
-    <code>
-public function shake(a : Float) {
-    camera.x = a * Math.sin((2 * Math.PI) * Math.random());
-    camera.y = a * Math.sin((2 * Math.PI) * Math.random());
-}
-    </code>
-</pre>
-
-<p>
-If you have learned about trig ratios, you should know that 'a,' or the amplitude, is the max
-displacement in either direction. The amplitude will be the max number of pixels the camera will move in
-any direction.
+When I first developed Nice, the overall project creation process was kinda sluggish. There were tons of folders to create, files to fill in, and tears. Thankfully, I developed a handy
+command (create) that generates a complete project that provides and easy starting point for new blogs, documentation, and general websites. 
 </p>
 
 <p>
-Since <i>Math.random()</i> returns a value from 0 to 1, we can find a random angle by multiplying our random number by
-the period of <i>sin.</i> For example, if <i>Math.random</i> generates 0.25 and we multiply it by <i>2 * Math.PI</i>,
-we will get the angle <i>Math.PI / 2</i> radians, or 90 degrees. <i>Math.sin(Math.PI / 2)</i> equals 1. If we multiply this
-by our amplitude, we will get how far we will displace the camera. If the amplitude is 10, then we will be moving the camera
-10 pixels in either the x or y directions. If the angle is greater than <i>Math.PI</i> then the camera will move in the negative
-direction. 
+This project was aimed at developers that want to generate static websites quickly, while also being able to access the web technologies that they love. I believe that this project nails
+that goal pretty well, and honestly I am very proud of it. 
 </p>
 
-<p>
-To create the desired effect, call the <i>shake</i> function every frame you want the screen to shake.	
-</p>
+<h4>Other Projects</h4>
 
 <p>
-For more information on trig functions, read <a href="https://www.mathsisfun.com/algebra/trigonometry.html">this page about basic trig.</a>
+I have not been as productive as I wanted this summer, mostly because of my job and having a lack of original ideas. I have an issue when it comes to developing
+software; it needs to be innovative and new. Of course, these ideas are difficult to come by. However, in my search of creativity, I have developed many small projects that
+have helped me master Node.js (Express) and React. Although none of these little apps will become the next AirBNB or Netflix, they helped me strengthen my knowledge of full stack development.
+It's not about the destination, it's about the journey, right? 
 </p>
 </p>
 				</div>
