@@ -1,10 +1,10 @@
 #title {
-    font-family: 'Fjalla One', sans-serif;
+    font-family: 'Bitter', sans-serif;
     color: black;
 }
 
 #site-title {
-    font-family: 'Fjalla One', monospace;
+    font-family: 'Bitter', monospace;
     color: black;
 }
 
@@ -28,7 +28,7 @@ pre {
 	
 	padding: 8px;
 	
-    font-family: 'Fjalla One', Courier, monospace;
+    font-family: 'Bitter', Courier, monospace;
     color: black;
 }
 
