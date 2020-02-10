@@ -52,47 +52,41 @@
 			</div>
 
 			<div class="col-md-8">
-				<h4 class="color" id="title">Education</h4>
+				<h4 class="color" id="title">Ti-84 Programs</h4>
+					<p>2 / 10 / 2020 </p>
 				<p>
 
-<h5>Rensselaer Polytechnic Institute</h5>
-<b>Notable Courses:</b>
-<ul>
-    <li>Calculus II</li>
-    <li>Multivariable Calculus & Matrix Algebra</li>
-    <li>Data Structures</li>
-    <li>Foundations of Computer Science</li>
-    <li>Computer Organization</li>
-</ul>
+For Physics 1, I decided to write some quick programs that simplified doing basic vector math, like calculating dot products and cross products. If anyone wants to use them, please feel free!
 
-<b>Activities</b>
-<ul>
-    <li>Treasurer of Bray Hall (Rensselaer Student Association)</li>
-    <li>Rensselaer Center of Open Source (RCOS)</li>
-</ul>
+<pre>
+<code>
+Disp "V1: "
+Input "X: ",A
+Input "Y: ",B
+Input "Z: ",C
+Disp "V2: "
+Input "X: ",D
+Input "Y: ",E
+Input "Z: ",F
 
-<hr>
+Input "DOT (0) OR CROSS (1)? ",T
 
-<h5>North Middlesex Regional High School</h5>
-<b>Notable Courses:</b>
-<ul>
-    <li>AP Computer Science Principles</li>
-    <li>AP Computer Science A</li>
-    <li>AP English Language & Composition</li>
-    <li>AP Calculus BC</li>
-    <li>AP Physics 1</li>
-    <li>AP American History</li>
-</ul>
-
-<b>Activities</b>
-<ul>
-    <li>President of National Honor Society</li>
-    <li>Vice-President of Class of 2019</li>
-    <li>Founder of Programming Club</li>
-    <li>Member of the Math Team (Mathletes)</li>
-    <li>Wind Symphony (Percussionist)</li>
-    <li>Marching Band / Winter Percussion / Jazz Band (Percussionist)</li>
-</ul></p>
+If T=0
+Then
+	A*D->X
+	X+B*E->X
+	X+C*F->X
+	Disp "Result: ",X
+Else
+	(B*F)-(C*E)->X
+	(C*D)-(A*F)->Y
+	(A*E)-(B*D)->Z
+	Disp "X ",X
+	Disp "Y ",Y
+	Disp "Z ",Z
+End
+</code>
+</pre></p>
 			</div>
 		</div>
 	</main>
