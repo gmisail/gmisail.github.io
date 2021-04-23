@@ -1,0 +1,7 @@
+baseURL = "http://gmisail.me/"
+languageCode = "en-us"
+title = "Graham Misail"
+theme = "etch"
+
+[params]
+	description = "Hello, I am a Computer Major as Rensselaer Polytechnic Institute who loves making things with code."
