@@ -3,5 +3,7 @@ languageCode = "en-us"
 title = "Graham Misail"
 theme = "etch"
 
+publishDir = "docs"
+
 [params]
 	description = "Hello, I am a Computer Major as Rensselaer Polytechnic Institute who loves making things with code."
