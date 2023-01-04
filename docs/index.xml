@@ -1,1 +1,19 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Home on Graham Misail</title><link>http://gmisail.me/</link><description>Recent content in Home on Graham Misail</description><generator>Hugo -- gohugo.io</generator><language>en-us</language><lastBuildDate>Wed, 14 Apr 2021 23:15:19 -0400</lastBuildDate><atom:link href="http://gmisail.me/index.xml" rel="self" type="application/rss+xml"/></channel></rss>
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Home on Graham Misail</title>
+    <link>http://gmisail.me/</link>
+    <description>Recent content in Home on Graham Misail</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <lastBuildDate>Wed, 14 Apr 2021 23:15:19 -0400</lastBuildDate>
+    
+	<atom:link href="http://gmisail.me/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    
+    
+    
+    
+  </channel>
+</rss>
