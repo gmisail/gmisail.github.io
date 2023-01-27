@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en"><head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Hello, I am a Computer Major as Rensselaer Polytechnic Institute who loves making things with code.">
+    
+    <link rel="shortcut icon" href="http://gmisail.me/favicon.ico">
+    
+    <link rel="stylesheet" href="/css/style.min.css">
+
+    <link rel="canonical" href="http://gmisail.me/blog/kilogram-design/" />
+    <title>Kilogram Design</title>
+</head>
+<body><header id="banner">
+    <h2><a href="http://gmisail.me/">Graham Misail</a></h2>
+    <nav>
+        <ul>
+            <li>
+                <a href="/projects/" title="Projects">Projects</a>
+            </li>
+        </ul>
+    </nav>
+</header>
+<main id="content">
+<article>
+    <header id="post-header">
+        <h1>Kilogram Design</h1>
+        <div>
+                <time>January 11, 2023</time>
+            </div>
+    </header><p>This document serves as a living design document for how I feel the language should look / work internally.</p>
+<h2 id="syntax">Syntax</h2>
+<h3 id="records">Records</h3>
+<p>Records are immutable &ldquo;bags&rdquo; of data, similar to a <code>struct</code> in C.</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-lua" data-lang="lua"><span style="display:flex;"><span>record Player
+</span></span><span style="display:flex;"><span>	x: int,
+</span></span><span style="display:flex;"><span>	y: int,
+</span></span><span style="display:flex;"><span>	w: int,
+</span></span><span style="display:flex;"><span>	h: int
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">end</span>
+</span></span></code></pre></div><h3 id="functions">Functions</h3>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-lua" data-lang="lua"><span style="display:flex;"><span><span style="color:#66d9ef">function</span> <span style="color:#a6e22e">move_player</span>(player: Player, dx: int, dy: int): Player
+</span></span><span style="display:flex;"><span>	Player { 
+</span></span><span style="display:flex;"><span>		x: player.x <span style="color:#f92672">+</span> dx,
+</span></span><span style="display:flex;"><span>		y: player.y <span style="color:#f92672">+</span> dy,
+</span></span><span style="display:flex;"><span>		w: player.w,
+</span></span><span style="display:flex;"><span>		h: player.h
+</span></span><span style="display:flex;"><span>	}
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">end</span>
+</span></span></code></pre></div></article>
+
+        </main><footer id="footer">
+    
+</footer>
+</body>
+</html>
