@@ -5,7 +5,7 @@ draft: false
 ---
 
 Hello! I am a Software Engineer at [Nuvalence](https://nuvalence.io) that loves making things with code. Previously, I studied 
-Computer Science major at Rensselaer Polytechnic Institute before graduating in December of 2022.
+Computer Science at Rensselaer Polytechnic Institute before graduating in December of 2022.
 
 My personal projects are usually Linux applications, programming languages, or occasionally full-stack web applications. You can check out
 what I'm currently working on on my [Github](https://github.com/gmisail).
