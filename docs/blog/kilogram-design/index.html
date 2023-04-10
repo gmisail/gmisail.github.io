@@ -30,24 +30,78 @@
             </div>
     </header><p>This document serves as a living design document for how I feel the language should look / work internally.</p>
 <h2 id="syntax">Syntax</h2>
+<h3 id="variables">Variables</h3>
+<p>Variables are defined using the <code>let</code> keyword.</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-javascript" data-lang="javascript"><span style="display:flex;"><span><span style="color:#66d9ef">let</span> <span style="color:#a6e22e">x</span><span style="color:#f92672">:</span> <span style="color:#66d9ef">int</span> <span style="color:#f92672">=</span> <span style="color:#ae81ff">100</span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">let</span> <span style="color:#a6e22e">y</span><span style="color:#f92672">:</span> <span style="color:#a6e22e">string</span> <span style="color:#f92672">=</span> <span style="color:#e6db74">&#34;hello world&#34;</span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">let</span> <span style="color:#a6e22e">z</span><span style="color:#f92672">:</span> <span style="color:#66d9ef">float</span> <span style="color:#f92672">=</span> <span style="color:#ae81ff">3.14</span>
+</span></span></code></pre></div><p>An interesting thing to note is that variables are <strong>immutable</strong>. This is similar to
+languages like Haskell or Elixir.</p>
+<h3 id="functions">Functions</h3>
+<p>There are no <strong>named functions</strong>, but instead <strong>lambda functions</strong> assigned to variables. Functions
+are treated like any other variable, thus they are declared like any other variable: using a <code>let</code> binding.</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-javascript" data-lang="javascript"><span style="display:flex;"><span><span style="color:#66d9ef">let</span> <span style="color:#a6e22e">sum</span><span style="color:#f92672">:</span> (<span style="color:#66d9ef">int</span>, <span style="color:#66d9ef">int</span>) <span style="color:#f92672">-&gt;</span> <span style="color:#66d9ef">int</span> <span style="color:#f92672">=</span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">function</span>(<span style="color:#a6e22e">x</span><span style="color:#f92672">:</span> <span style="color:#66d9ef">int</span>, <span style="color:#a6e22e">y</span><span style="color:#f92672">:</span> <span style="color:#66d9ef">int</span>)<span style="color:#f92672">:</span> <span style="color:#66d9ef">int</span>
+</span></span><span style="display:flex;"><span>	<span style="color:#a6e22e">x</span> <span style="color:#f92672">+</span> <span style="color:#a6e22e">y</span>
+</span></span><span style="display:flex;"><span><span style="color:#a6e22e">end</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#a6e22e">sum</span>(<span style="color:#ae81ff">10</span>, <span style="color:#ae81ff">5</span>)
+</span></span></code></pre></div><p>Note that for all variable declarations, you can optionally drop the type declaration. So, the above expression can
+be simplified to the following.</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-javascript" data-lang="javascript"><span style="display:flex;"><span><span style="color:#66d9ef">let</span> <span style="color:#a6e22e">sum</span> <span style="color:#f92672">=</span> <span style="color:#66d9ef">function</span>(<span style="color:#a6e22e">x</span><span style="color:#f92672">:</span> <span style="color:#66d9ef">int</span>, <span style="color:#a6e22e">y</span><span style="color:#f92672">:</span> <span style="color:#66d9ef">int</span>)<span style="color:#f92672">:</span> <span style="color:#66d9ef">int</span>
+</span></span><span style="display:flex;"><span>	<span style="color:#a6e22e">x</span> <span style="color:#f92672">+</span> <span style="color:#a6e22e">y</span>
+</span></span><span style="display:flex;"><span><span style="color:#a6e22e">end</span>
+</span></span></code></pre></div><p>We still need to specify the types of <code>x</code> and <code>y</code>, however we can infer the type of <code>sum</code> based on its value.</p>
 <h3 id="records">Records</h3>
 <p>Records are immutable &ldquo;bags&rdquo; of data, similar to a <code>struct</code> in C.</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-lua" data-lang="lua"><span style="display:flex;"><span>record Player
-</span></span><span style="display:flex;"><span>	x: int,
-</span></span><span style="display:flex;"><span>	y: int,
-</span></span><span style="display:flex;"><span>	w: int,
-</span></span><span style="display:flex;"><span>	h: int
-</span></span><span style="display:flex;"><span><span style="color:#66d9ef">end</span>
-</span></span></code></pre></div><h3 id="functions">Functions</h3>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-lua" data-lang="lua"><span style="display:flex;"><span><span style="color:#66d9ef">function</span> <span style="color:#a6e22e">move_player</span>(player: Player, dx: int, dy: int): Player
-</span></span><span style="display:flex;"><span>	Player { 
-</span></span><span style="display:flex;"><span>		x: player.x <span style="color:#f92672">+</span> dx,
-</span></span><span style="display:flex;"><span>		y: player.y <span style="color:#f92672">+</span> dy,
-</span></span><span style="display:flex;"><span>		w: player.w,
-</span></span><span style="display:flex;"><span>		h: player.h
-</span></span><span style="display:flex;"><span>	}
-</span></span><span style="display:flex;"><span><span style="color:#66d9ef">end</span>
-</span></span></code></pre></div></article>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-javascript" data-lang="javascript"><span style="display:flex;"><span><span style="color:#a6e22e">record</span> <span style="color:#a6e22e">Player</span>
+</span></span><span style="display:flex;"><span>	<span style="color:#a6e22e">x</span><span style="color:#f92672">:</span> <span style="color:#66d9ef">int</span>,
+</span></span><span style="display:flex;"><span>	<span style="color:#a6e22e">y</span><span style="color:#f92672">:</span> <span style="color:#66d9ef">int</span>,
+</span></span><span style="display:flex;"><span>	<span style="color:#a6e22e">w</span><span style="color:#f92672">:</span> <span style="color:#66d9ef">int</span>,
+</span></span><span style="display:flex;"><span>	<span style="color:#a6e22e">h</span><span style="color:#f92672">:</span> <span style="color:#66d9ef">int</span>
+</span></span><span style="display:flex;"><span><span style="color:#a6e22e">end</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">let</span> <span style="color:#a6e22e">my_player</span> <span style="color:#f92672">=</span> <span style="color:#a6e22e">Player</span> { <span style="color:#a6e22e">x</span><span style="color:#f92672">:</span> <span style="color:#ae81ff">0</span>, <span style="color:#a6e22e">y</span><span style="color:#f92672">:</span> <span style="color:#ae81ff">5</span>, <span style="color:#a6e22e">w</span><span style="color:#f92672">:</span> <span style="color:#ae81ff">8</span>, <span style="color:#a6e22e">h</span><span style="color:#f92672">:</span> <span style="color:#ae81ff">16</span> }
+</span></span><span style="display:flex;"><span><span style="color:#a6e22e">my_player</span>
+</span></span></code></pre></div><h3 id="enums">Enums</h3>
+<p>Enums behave similarly to algebraic data types in OCaml and Haskell. They can be used to construct
+more complex data types, such as linked lists and trees.</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-javascript" data-lang="javascript"><span style="display:flex;"><span><span style="color:#66d9ef">enum</span> <span style="color:#a6e22e">List</span>
+</span></span><span style="display:flex;"><span>	<span style="color:#a6e22e">Cons</span>(<span style="color:#66d9ef">int</span>, <span style="color:#a6e22e">List</span>),
+</span></span><span style="display:flex;"><span>	<span style="color:#a6e22e">Nil</span>
+</span></span><span style="display:flex;"><span><span style="color:#a6e22e">end</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">let</span> <span style="color:#a6e22e">my_list</span> <span style="color:#f92672">=</span> <span style="color:#a6e22e">Cons</span>(<span style="color:#ae81ff">1</span>, <span style="color:#a6e22e">Cons</span>(<span style="color:#ae81ff">2</span>, <span style="color:#a6e22e">Cons</span>(<span style="color:#ae81ff">3</span>, <span style="color:#a6e22e">Nil</span>)))
+</span></span></code></pre></div><h3 id="if">If</h3>
+<p>Instead of the classic, C-style <code>if</code> statements, Kilogram uses &ldquo;if expressions&rdquo;.</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-javascript" data-lang="javascript"><span style="display:flex;"><span><span style="color:#66d9ef">let</span> <span style="color:#a6e22e">demo</span><span style="color:#f92672">:</span> <span style="color:#a6e22e">string</span> <span style="color:#f92672">=</span> <span style="color:#66d9ef">if</span> <span style="color:#ae81ff">5</span> <span style="color:#f92672">&lt;</span> <span style="color:#ae81ff">10</span> <span style="color:#a6e22e">then</span> <span style="color:#e6db74">&#34;hello&#34;</span> <span style="color:#66d9ef">else</span> <span style="color:#e6db74">&#34;world&#34;</span>
+</span></span></code></pre></div><p><em>TODO</em></p>
+<h2 id="implementation">Implementation</h2>
+<p>Kilogram is a compiled language using C as its compilation target. Since C is not a functional language,
+thought must be put into how we represent functional concepts.</p>
+<h3 id="lambda-functions">Lambda functions</h3>
+<p>A core component of functional languages is lambda functions, otherwise known as anonymous functions. Let&rsquo;s consider
+two equivalent chunks of code, one in Javascript and the other in Kilogram.</p>
+<p><strong>Javascript:</strong></p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-javascript" data-lang="javascript"><span style="display:flex;"><span><span style="color:#66d9ef">let</span> <span style="color:#a6e22e">sum</span> <span style="color:#f92672">=</span> (<span style="color:#a6e22e">x</span>, <span style="color:#a6e22e">y</span>) =&gt; <span style="color:#a6e22e">x</span> <span style="color:#f92672">+</span> <span style="color:#a6e22e">y</span>;
+</span></span></code></pre></div><p><strong>Kilogram:</strong></p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-javascript" data-lang="javascript"><span style="display:flex;"><span><span style="color:#66d9ef">let</span> <span style="color:#a6e22e">sum</span> <span style="color:#f92672">=</span> <span style="color:#66d9ef">function</span>(<span style="color:#a6e22e">x</span><span style="color:#f92672">:</span> <span style="color:#66d9ef">int</span>, <span style="color:#a6e22e">y</span><span style="color:#f92672">:</span> <span style="color:#66d9ef">int</span>)<span style="color:#f92672">:</span> <span style="color:#66d9ef">int</span> 
+</span></span><span style="display:flex;"><span>	<span style="color:#a6e22e">x</span> <span style="color:#f92672">+</span> <span style="color:#a6e22e">y</span>
+</span></span><span style="display:flex;"><span><span style="color:#a6e22e">end</span>
+</span></span></code></pre></div><p>Internally, we are assigning the variable <code>sum</code> to a lambda function that takes integers <code>x, y</code> and returns an integer. Since functions
+are just another value, we do not want to handle them drastically different from how we handle another primitives. To do this we need
+to use a couple clever tricks.</p>
+<p>The first issue is handling free variables within the function body. Consider the following code:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-javascript" data-lang="javascript"><span style="display:flex;"><span><span style="color:#66d9ef">let</span> <span style="color:#a6e22e">z</span> <span style="color:#f92672">=</span> <span style="color:#ae81ff">10</span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">let</span> <span style="color:#a6e22e">sum</span> <span style="color:#f92672">=</span> <span style="color:#66d9ef">function</span>(<span style="color:#a6e22e">x</span><span style="color:#f92672">:</span> <span style="color:#66d9ef">int</span>, <span style="color:#a6e22e">y</span><span style="color:#f92672">:</span> <span style="color:#66d9ef">int</span>)<span style="color:#f92672">:</span> <span style="color:#66d9ef">int</span> 
+</span></span><span style="display:flex;"><span>	<span style="color:#a6e22e">x</span> <span style="color:#f92672">+</span> <span style="color:#a6e22e">y</span> <span style="color:#f92672">+</span> <span style="color:#a6e22e">z</span>
+</span></span><span style="display:flex;"><span><span style="color:#a6e22e">end</span>
+</span></span></code></pre></div><p>As you can see, the value of <code>sum</code> depends on the value of <code>z</code>, but <code>z</code> is not passed as an argument. Instead, it is <em>captured</em> by the
+lambda function. Let&rsquo;s say we pass this <code>sum</code> variable to another function. How do we know what <code>z</code> is?</p>
+<p>To solve this, we add <code>z</code> to a <em>function context</em>. When we create an instance of a lambda function, we capture the values of each free variable and
+store it within the function context. When we call the lambda function, we&rsquo;ll load each of the variables from the context into scope; that way, all of
+the necessary variables will be in scope to evaluate the function&rsquo;s body.</p>
+</article>
 
         </main><footer id="footer">
     
