@@ -1,16 +1,16 @@
 ---
-title: "Kilogram Design"
+title: "Kilogram"
 date: 2023-01-11T23:02:33-05:00
-draft: false 
+draft: false
 ---
 
-This document serves as a living design document for how I feel the language should look / work internally. 
 
-## Syntax 
+
+## Syntax
 
 ### Variables
 
-Variables are defined using the `let` keyword. 
+Variables are defined using the `let` keyword.
 
 ```javascript
 let x: int = 100
@@ -18,7 +18,7 @@ let y: string = "hello world"
 let z: float = 3.14
 ```
 
-An interesting thing to note is that variables are **immutable**. This is similar to 
+An interesting thing to note is that variables are **immutable**. This is similar to
 languages like Haskell or Elixir.
 
 ### Functions
@@ -35,7 +35,7 @@ end
 sum(10, 5)
 ```
 
-Note that for all variable declarations, you can optionally drop the type declaration. So, the above expression can 
+Note that for all variable declarations, you can optionally drop the type declaration. So, the above expression can
 be simplified to the following.
 
 ```javascript
@@ -48,7 +48,7 @@ We still need to specify the types of `x` and `y`, however we can infer the type
 
 ### Records
 
-Records are immutable "bags" of data, similar to a `struct` in C. 
+Records are immutable "bags" of data, similar to a `struct` in C.
 
 ```javascript
 record Player
@@ -78,7 +78,7 @@ let my_list = Cons(1, Cons(2, Cons(3, Nil)))
 
 ### If
 
-Instead of the classic, C-style `if` statements, Kilogram uses "if expressions". 
+Instead of the classic, C-style `if` statements, Kilogram uses "if expressions".
 
 ```javascript
 let demo: string = if 5 < 10 then "hello" else "world"
@@ -103,7 +103,7 @@ let sum = (x, y) => x + y;
 
 **Kilogram:**
 ```javascript
-let sum = function(x: int, y: int): int 
+let sum = function(x: int, y: int): int
 	x + y
 end
 ```
@@ -116,14 +116,14 @@ The first issue is handling free variables within the function body. Consider th
 
 ```javascript
 let z = 10
-let sum = function(x: int, y: int): int 
+let sum = function(x: int, y: int): int
 	x + y + z
 end
 ```
 
-As you can see, the value of `sum` depends on the value of `z`, but `z` is not passed as an argument. Instead, it is *captured* by the 
-lambda function. Let's say we pass this `sum` variable to another function. How do we know what `z` is? 
+As you can see, the value of `sum` depends on the value of `z`, but `z` is not passed as an argument. Instead, it is *captured* by the
+lambda function. Let's say we pass this `sum` variable to another function. How do we know what `z` is?
 
 To solve this, we add `z` to a *function context*. When we create an instance of a lambda function, we capture the values of each free variable and
-store it within the function context. When we call the lambda function, we'll load each of the variables from the context into scope; that way, all of 
+store it within the function context. When we call the lambda function, we'll load each of the variables from the context into scope; that way, all of
 the necessary variables will be in scope to evaluate the function's body.
